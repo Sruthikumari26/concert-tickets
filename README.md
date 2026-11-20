@@ -52,7 +52,7 @@ docker compose up -d --build
 Access the app
 Open your browser and go to http://localhost:8081.
 
-📂 Project Structure
+// 📂 Project Structure
 text
 concert-tix/
 ├── src/
