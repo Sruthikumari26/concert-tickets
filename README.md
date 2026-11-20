@@ -82,37 +82,31 @@ Here is the future development plan for ConcertTix:
 □ Database persistence (replace in-memory with MySQL/PostgreSQL)
 □ QR code generation for digital tickets
 □ Integration with a payment gateway (e.g., Stripe)
+
 ⚙️ Getting Started
 Prerequisites
 Java JDK 17 or higher
-
 Maven
-
 Docker & Docker Compose (optional, for containerized deployment)
-
 Installation (Local)
-Clone the repository
 
+Clone the repository
 bash
 git clone https://github.com/YOUR_USERNAME/concert-tix.git
 cd concert-tix
 Run the app
-
 bash
 mvn spring-boot:run
 The application will start on http://localhost:8080.
-
 Installation (Docker)
 Build and start the containers
-
 bash
 docker compose up -d --build
 Access the app
 Open your browser and go to http://localhost:8081.
 
 👤 Author
-Your Name
-
+Madupathi Sruthi
 GitHub: @Sruthikumari26
 Email: sruthikumari92@gmail.com
 
