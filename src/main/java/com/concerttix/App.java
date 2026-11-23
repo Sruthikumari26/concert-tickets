@@ -1,3 +1,4 @@
+
 package com.concerttix;
 
 import org.springframework.boot.SpringApplication;
@@ -15,16 +16,31 @@ import java.util.List;
 @Controller
 public class App {
 
-    // Simple in-memory data store
-    private static class Ticket {
-        int id;
-        String concert;
-        String buyer;
+    public static class Ticket {
+        private int id;
+        private String concert;
+        private String buyer;
 
-        Ticket(int id, String concert) {
+        public Ticket(int id, String concert) {
             this.id = id;
             this.concert = concert;
             this.buyer = "Available";
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getConcert() {
+            return concert;
+        }
+
+        public String getBuyer() {
+            return buyer;
+        }
+
+        public void setBuyer(String buyer) {
+            this.buyer = buyer;
         }
     }
 
@@ -47,10 +63,11 @@ public class App {
     }
 
     @PostMapping("/buy")
-    public String buyTicket(@RequestParam int id, @RequestParam String buyer) {
+    public String buyTicket(@RequestParam int id,
+                            @RequestParam String buyer) {
         for (Ticket t : tickets) {
             if (t.id == id && "Available".equals(t.buyer)) {
-                t.buyer = buyer;
+                t.setBuyer(buyer);
                 break;
             }
         }
