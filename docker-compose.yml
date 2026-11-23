@@ -1,8 +1,8 @@
+
+
 services:
   mysql:
     image: mysql:8.0
-    container_name: concerthub-mysql
-    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: concerthub
@@ -17,18 +17,15 @@ services:
       retries: 10
 
   myapp:
-    build: .
-    container_name: concerttix-container
-    restart: unless-stopped
+    image: sruthikumari94/myapp:application
     ports:
       - "1111:8080"
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/concerthub?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_URL: "jdbc:mysql://mysql:3306/concerthub?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
       DB_USERNAME: root
       DB_PASSWORD: root
     depends_on:
-      - mysql:
-        condition: service_healthy
+      - mysql
 
 volumes:
   mysql_data:
