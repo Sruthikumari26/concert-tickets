@@ -92,7 +92,7 @@ Installation (Local)
 
 Clone the repository
 bash
-git clone https://github.com/YOUR_USERNAME/concert-tix.git
+git clone https://github.com/Sruthikumari92/concert-tix.git
 cd concert-tix
 Run the app
 bash
